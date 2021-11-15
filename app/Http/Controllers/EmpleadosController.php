@@ -40,4 +40,29 @@ class EmpleadosController extends Controller
         
         return back();
     }
+    
+    public function delete($id)
+    {
+        $empleado = Empleados::find($id);
+        $empleado->delete();
+
+        return back();
+    }
+
+    public function estatus($id)
+    {
+        $empleado = Empleados::find($id);
+
+        if($empleado->estatus == 1){
+            $empleado->update([
+                'estatus' => 0
+            ]);
+        }else{
+            $empleado->update([
+                'estatus' => 1
+            ]);
+        }
+
+        return back();
+    }
 }

@@ -22,3 +22,5 @@ Route::post('/clientes-store' , 'ClientesController@store')->name("clientes_stor
 
 Route::get('/empleados' , 'EmpleadosController@index')->name("view_empleados");
 Route::post('/empleados-store' , 'EmpleadosController@store')->name("empleados_store");
+Route::get('/empleados-delete' , 'EmpleadosController@delete')->name('empleados_delete');
+Route::get('/empleados-estatus/{id}' , 'EmpleadosController@estatus')->name('empleados_estatus');

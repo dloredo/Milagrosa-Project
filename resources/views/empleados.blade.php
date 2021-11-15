@@ -36,9 +36,20 @@
                             <td>{{ $empleado->direccion }}</td>
                             <td>{{ $empleado->fecha_inicio }}</td>
                             <td>{{ $empleado->prestamo }}</td>
-                            <td>{{ $empleado->estatus }}</td>
                             <td>
-                                <a href="" class="btn btn-danger">Eliminar</a>
+                                @if($empleado->estatus == 1)
+                                    <span class="badge badge-success">Activo</span>
+                                @else
+                                    <span class="badge badge-warning">Inactivo</span>
+                                @endif
+                            </td>
+                            <td>
+                                <a href="{{ route('empleados_delete') }}" class="btn btn-danger">Eliminar</a>
+                                @if($empleado->estatus == 1)
+                                    <a href="{{ route("empleados_estatus" , $empleado->id) }}" class="btn btn-warning">Inactivar</a>
+                                @else
+                                    <a href="{{ route("empleados_estatus" , $empleado->id) }}" class="btn btn-success">Activar</a>
+                                @endif
                             </td>
                         </tr>  
                     @endforeach  

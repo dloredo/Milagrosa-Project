@@ -43,4 +43,19 @@ class ClientesController extends Controller
         
         return back();
     }
+
+    public function delete($id)
+    {
+        $cliente = Clientes::find($id);
+        DB::beginTransaction();
+        try{
+            $cliente->delete();
+            DB::commit();
+        }catch(\Exception $e){
+            DB::rollback();
+            dd($e);
+        }
+
+        return back();
+    }
 }

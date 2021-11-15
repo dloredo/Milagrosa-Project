@@ -33,7 +33,7 @@
                         <tr>
                             <td>{{ $cliente->id }}</td>
                             <td>{{ $cliente->nombres }}</td>
-                            <td>{{ $cliente->fecha_nacimiento }}</td>
+                            <td>{{date('d-m-Y', strtotime($cliente->fecha_nacimiento))}}</td>
                             <td>{{ $cliente->edad }}</td>
                             <td>{{ $cliente->telefono }}</td>
                             <td>{{ $cliente->sexo }}</td>
