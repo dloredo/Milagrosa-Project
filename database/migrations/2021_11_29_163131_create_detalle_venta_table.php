@@ -18,11 +18,8 @@ class CreateDetalleVentaTable extends Migration
             $table->integer("id_venta")->unsigned();
             $table->foreign("id_venta")->references("id")->on("ventas");
 
-            $table->integer("id_producto")->unsigned();
-            $table->foreign("id_producto")->references("id")->on("productos");
-
-            $table->integer("id_servicio")->unsigned();
-            $table->foreign("id_servicio")->references("id")->on("servicios");
+            $table->integer("id_producto_servicio")->unsigned();
+            $table->foreign("id_producto_servicio")->references("id")->on("productos_servicios");
 
             $table->integer("cantidad");
         });

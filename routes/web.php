@@ -29,10 +29,15 @@ Route::get('/categorias' , 'CategoriasController@index')->name("view_categorias"
 Route::post('/categorias-store' , 'CategoriasController@store')->name("categorias_store");
 
 Route::get('/servicios' , 'ServiciosController@index')->name("view_servicios");
-Route::post('/servicios-store' , 'ServiciosController@store')->name("servicios_store");
+Route::post('/servicios-store' , 'ProductosServiciosController@store')->name("servicios_store");
 
 Route::get('/productos' , 'ProductosController@index')->name("view_productos");
-Route::post('/productos-store' , 'ProductosController@store')->name("productos_store");
+Route::post('/productos-store' , 'ProductosServiciosController@store')->name("productos_store");
 
 Route::get('/ventas' , 'VentasController@index')->name("view_ventas");
+
+Route::get('/ventas-agregar-producto-servicio/{id}' , 'VentasController@agregarProductoServicio')->name("agregarProductoServicio");
+Route::post('/updateCantidad/{id}' , 'VentasController@updateCantidad')->name("updateCantidad");
+Route::get('/deleteProductoServicio/{id}' , 'VentasController@deleteProductoServicio')->name("deleteProductoServicio");
+
 Route::get('/pre-ventas' , 'VentasController@pre_venta')->name("view_pre_venta");

@@ -82,6 +82,8 @@
                             <label for="precio" class="form-control-label">Precio</label>
                             <input type="number" id="precio" name="precio" class="form-control">
                         </div>
+                        <input type="hidden" name="tipo" id="tipo" value="Servicio">
+                        <input type="hidden" name="stock" id="0" value="0">
                     </form>
                 </div>
             </div>

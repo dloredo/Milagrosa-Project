@@ -20,9 +20,6 @@
                     <a href="{{ route("view_servicios") }}"><i class="fas fa-calendar-alt"></i>Servicios</a>
                 </li>
                 <li>
-                    <a href="{{ route("view_categorias") }}"><i class="fas fa-calendar-alt"></i>Categorias</a>
-                </li>
-                <li>
                     <a href="{{ route("view_productos") }}"><i class="fas fa-calendar-alt"></i>Productos</a>
                 </li>
                 <li>

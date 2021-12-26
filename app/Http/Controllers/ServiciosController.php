@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProductosServicios;
 use App\Servicios;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ class ServiciosController extends Controller
 {
     public function index()
     {
-        $data["servicios"] = Servicios::all();
+        $data["servicios"] = ProductosServicios::where("estatus" , 1)->where("tipo" , "Servicio")->get();
         return view('servicios' , $data);
     }
     public function store(Request $request)

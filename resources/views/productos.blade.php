@@ -21,7 +21,6 @@
                         <th>Nombre</th>
                         <th>Precio</th>
                         <th>Stock</th>
-                        <th>Categoria</th>
                         <th>Estatus</th>
                         <th></th>
                     </tr>
@@ -33,7 +32,6 @@
                             <td>{{ $producto->nombre }}</td>
                             <td>${{ $producto->precio }}</td>
                             <td>{{ $producto->stock }}</td>
-                            <td>{{ $producto->categoria }}</td>
                             <td>
                                 @if($producto->estatus == 1)
                                     <span class="badge badge-success">Activo</span>
@@ -85,15 +83,8 @@
                             <label for="stock" class="form-control-label">Stock</label>
                             <input type="number" id="stock" name="stock" class="form-control">
                         </div>
-                        <div class="form-group">
-                            <label for="id_categoria" class="form-control-label">Categoria</label>
-                            <select name="id_categoria" id="id_categoria" class="form-control">
-                                <option value="" selected>Seleccione..</option>
-                                @foreach ($categorias as $categoria)
-                                    <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                        <input type="hidden" name="tipo" id="tipo" value="Producto">
+                        <input type="hidden" name="duracion" id="duracion" value="---">
                     </form>
                 </div>
             </div>

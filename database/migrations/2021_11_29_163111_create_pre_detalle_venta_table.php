@@ -16,11 +16,8 @@ class CreatePreDetalleVentaTable extends Migration
         Schema::create('pre_detalle_venta', function (Blueprint $table) {
             $table->increments("id");
 
-            $table->integer("id_producto")->unsigned();
-            $table->foreign("id_producto")->references("id")->on("productos");
-
-            $table->integer("id_servicio")->unsigned();
-            $table->foreign("id_servicio")->references("id")->on("servicios");
+            $table->integer("id_producto_servicio")->unsigned();
+            $table->foreign("id_producto_servicio")->references("id")->on("productos_servicios");
 
             $table->integer("cantidad");
         });

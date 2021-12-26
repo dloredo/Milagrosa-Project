@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Categorias;
 use App\Productos;
+use App\ProductosServicios;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -11,10 +12,7 @@ class ProductosController extends Controller
 {
     public function index()
     {
-        $data["productos"] = Productos::select("productos.*" ,"categorias.nombre as categoria")
-        ->join("categorias" , "productos.id_categoria" , "categorias.id")
-        ->get();
-        $data["categorias"] = Categorias::where("estatus" , 1)->get();
+        $data["productos"] = ProductosServicios::where("estatus" , 1)->where("tipo" , "Producto")->get();
         return view("productos" , $data);
     }
 
